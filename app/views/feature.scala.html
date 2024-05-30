@@ -1,0 +1,31 @@
+@(showFeature: Boolean, showString: String)
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feature Toggle Example</title>
+    <link rel="stylesheet" href="@routes.Assets.versioned("stylesheets/main.css")">
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto mt-10 p-5 space-y-4">
+        <h1 class="text-4xl font-bold text-center mb-5">Building Scala with LaunchDarkly</h1>
+        <p class="text-center text-lg mb-5">LaunchDarkly Java SDK 7.4.1</p>
+        @if(showFeature) {
+            <div class="p-6 max-w-sm mx-auto bg-green-500 text-white rounded-xl shadow-md space-y-4">
+                <h2 class="text-2xl">Feature Enabled</h2>
+                <p>The new feature is currently enabled!</p>
+            </div>
+        } else {
+            <div class="p-6 max-w-sm mx-auto bg-red-500 text-white rounded-xl shadow-md space-y-4">
+                <h2 class="text-2xl">Feature Disabled</h2>
+                <p>The new feature is currently disabled.</p>
+            </div>
+        }
+        <div class="p-6 max-w-sm mx-auto bg-blue-500 text-white rounded-xl shadow-md space-y-4">
+            <h2 class="text-2xl">String Feature</h2>
+            <p>@showString</p> 
+    </div>
+</body>
+</html>
